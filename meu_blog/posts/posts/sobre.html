@@ -1,0 +1,25 @@
+{% extends 'posts/base.html' %}
+
+
+{% block title %}{{ titulo }}{% endblock %}
+
+
+{% block content %}
+  <h1>{{ titulo }}</h1>
+  <div class="card mt-3">
+    <div class="card-body">
+      <h5 class="card-title">Descrição</h5>
+      <p class="card-text">{{ info.descricao }}</p>
+      <h5 class="card-title">Autores</h5>
+      <ul>
+        {% for autor in info.autores %}
+          <li>{{ autor }}</li>
+        {% endfor %}
+      </ul>
+      <p><strong>Ano:</strong> {{ info.ano }}</p>
+      <p><strong>Tecnologias:</strong> {{ info.tecnologia|join:", " }}</p>
+    </div>
+  </div>
+{% endblock %}
+
+

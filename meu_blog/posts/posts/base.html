@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Sport Club Corinthians Paulista{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .brand-white { color: #fff; font-weight:700; }
+      .corinthians-bg { background: #000; color: #fff; }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+
+
+    <nav class="navbar navbar-expand-lg corinthians-bg">
+      <div class="container">
+        <a class="navbar-brand brand-white" href="{% url 'posts:index' %}">Corinthians</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link brand-white" href="{% url 'posts:index' %}">Início</a></li>
+            <li class="nav-item"><a class="nav-link brand-white" href="{% url 'posts:equipe' %}">Elenco</a></li>
+            <li class="nav-item"><a class="nav-link brand-white" href="{% url 'posts:sobre' %}">Sobre</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <main class="container my-4">
+      {% block content %}{% endblock %}
+    </main>
+
+
+    <footer class="bg-light text-center py-3 mt-auto">
+      <div class="container">
+        &copy; 2025 Sport Club Corinthians Paulista — Todos os direitos reservados
+      </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
